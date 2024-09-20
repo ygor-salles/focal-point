@@ -18,6 +18,8 @@ export function TaskCard() {
         <span className={styles.text}>Suas tarefas de hoje</span>
         <div className={styles.wrapper}>
           <Checkbox onClickDelete={handleToggleModal} />
+          <Checkbox onClickDelete={handleToggleModal} />
+          <Checkbox onClickDelete={handleToggleModal} />
         </div>
         <span className={styles.text}>Tarefas finalizadas</span>
         <div className={styles.wrapper}>

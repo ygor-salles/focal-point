@@ -8,7 +8,7 @@ export function ModalToDeleteTask({ open, onClose }: ModalToDeleteProps) {
   return (
     <Modal open={open}>
       <h3 className={styles.title}>Deletar tarefa</h3>
-      <span>Tem certeza que você deseja deletar essa tarefa?</span>
+      <span className={styles.description}>Tem certeza que você deseja deletar essa tarefa?</span>
       <div className={styles.wrapper_buttons}>
         <Button variant="secondary" onClick={onClose}>
           Cancelar
