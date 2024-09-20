@@ -1,7 +1,9 @@
+import styles from './style.module.scss';
+
 export function Home() {
   return (
     <div>
-      <span>Home</span>
+      <span className={styles.span}>Home</span>
     </div>
   );
 }
