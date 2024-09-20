@@ -1,4 +1,5 @@
-import { Checkbox } from '../Checkbox';
+import { Checkbox } from '@components/Checkbox';
+
 import styles from './styles.module.scss';
 
 export function TaskCard() {
