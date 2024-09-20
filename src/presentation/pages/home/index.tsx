@@ -1,9 +1,10 @@
+import { TaskCard } from './components/TaskCard';
 import styles from './styles.module.scss';
 
 export function Home() {
   return (
     <div className={styles.container}>
-      <div>card</div>
+      <TaskCard />
       <button>Adicionar nova tarefa</button>
     </div>
   );
