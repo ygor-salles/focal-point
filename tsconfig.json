@@ -29,7 +29,6 @@
       "@providers/*": ["src/presentation/providers/*"],
       "@styles/*": ["src/presentation/styles/*"],
       "@pages/*": ["src/presentation/pages/*"],
-
       "@model/*": ["src/models/*"]
     }
   },
