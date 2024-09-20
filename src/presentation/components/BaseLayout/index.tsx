@@ -1,11 +1,6 @@
-import { ReactNode } from 'react';
-
 import { Header } from '../Header';
 import styles from './styles.module.scss';
-
-interface BaseLayoutProps {
-  children: ReactNode;
-}
+import { BaseLayoutProps } from './types';
 
 export function BaseLayout({ children }: BaseLayoutProps) {
   return (

@@ -13,7 +13,7 @@ export function ModalToDeleteTask({ open, onClose }: ModalToDeleteProps) {
         <Button variant="secondary" onClick={onClose}>
           Cancelar
         </Button>
-        <Button variant="primary" onClick={() => {}}>
+        <Button variant="danger" onClick={() => {}}>
           Deletar
         </Button>
       </div>

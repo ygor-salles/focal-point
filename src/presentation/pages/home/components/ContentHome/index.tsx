@@ -4,32 +4,21 @@ import { useCallback, useState } from 'react';
 
 import { Button } from '@components/Button';
 
-import { ModalToDeleteTask } from '../ModalToDeleteTask';
 import { ModalToRegisterTask } from '../ModalToRegisterTask';
 import { TaskCard } from '../TaskCard';
-import { TypeModalHome } from './types';
 
 export function ContentHome() {
-  const [openModal, setOpenModal] = useState<TypeModalHome>('stand-by');
-  const openModalRegister = openModal === 'register';
-  const openModalDelete = openModal === 'delete';
+  const [openModal, setOpenModal] = useState(false);
 
-  const handleCloseModal = useCallback(() => {
-    setOpenModal('stand-by');
-  }, []);
-
-  const handleOpenModalRegister = () => setOpenModal('register');
-
-  const handleOpenModalDelete = () => setOpenModal('delete');
+  const handleToggleModal = useCallback(() => setOpenModal(prev => !prev), []);
 
   return (
     <>
       <TaskCard />
-      <Button variant="primary" type="button" onClick={handleOpenModalRegister}>
+      <Button variant="primary" type="button" onClick={handleToggleModal}>
         Adicionar nova tarefa
       </Button>
-      <ModalToRegisterTask open={openModalRegister} onClose={handleCloseModal} />
-      <ModalToDeleteTask open={openModalDelete} onClose={handleCloseModal} />
+      <ModalToRegisterTask open={openModal} onClose={handleToggleModal} />
     </>
   );
 }
