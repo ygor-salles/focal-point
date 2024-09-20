@@ -10,8 +10,12 @@
   --BLACK: #000000;
   --WHITE: #ffffff;
 
+  --GRAY_05: #f7f9fd;
   --GRAY_10: #eaecf0;
   --GRAY_20: #d7dde9;
+
+  --BLUE_10: #a0dcf6;
+  --BLUE_50: #0796d3;
 }
 
 body {
@@ -30,6 +34,7 @@ input,
 textarea,
 span,
 p,
+label,
 h1,
 h2,
 h3,
