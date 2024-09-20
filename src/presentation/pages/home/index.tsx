@@ -1,9 +1,10 @@
-import styles from './style.module.scss';
+import styles from './styles.module.scss';
 
 export function Home() {
   return (
-    <div>
-      <span className={styles.span}>Home</span>
+    <div className={styles.container}>
+      <div>card</div>
+      <button>Adicionar nova tarefa</button>
     </div>
   );
 }

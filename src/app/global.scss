@@ -9,12 +9,20 @@
   --GRAY_56: #0000008f;
   --BLACK: #000000;
   --WHITE: #ffffff;
+
+  --GRAY_10: #eaecf0;
+  --GRAY_20: #d7dde9;
 }
 
 body {
   background: var(--WHITE);
   max-width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 button,
