@@ -1,5 +1,3 @@
-'use client';
-
 import { ContentHome } from './components/ContentHome';
 import styles from './styles.module.scss';
 
