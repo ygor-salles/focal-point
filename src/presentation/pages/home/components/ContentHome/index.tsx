@@ -11,14 +11,19 @@ import { ModalToRegisterTask } from '../ModalToRegisterTask';
 import { TaskCard } from '../TaskCard';
 
 export function ContentHome() {
-  const [todoList, setTodoList] = useState<TodoModel[]>([]);
+  const [todoList, setTodoList] = useState<TodoModel[]>();
   const [openModal, setOpenModal] = useState(false);
 
   const handleToggleModal = useCallback(() => setOpenModal(prev => !prev), []);
 
+  // TODO: localStorage only runs on the client-side
   useEffect(() => {
     setTodoList(getTodoListLocalStorage());
   }, []);
+
+  if (!todoList) {
+    return <p>Buscando dados...</p>;
+  }
 
   return (
     <>

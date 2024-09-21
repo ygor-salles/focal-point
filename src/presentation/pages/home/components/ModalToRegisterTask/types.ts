@@ -6,5 +6,5 @@ export interface ModalToRegisterProps {
   todoList: TodoModel[];
   open: boolean;
   onClose: () => void;
-  setTodoList: Dispatch<SetStateAction<TodoModel[]>>;
+  setTodoList: Dispatch<SetStateAction<TodoModel[] | undefined>>;
 }

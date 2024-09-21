@@ -35,9 +35,11 @@ export function ModalToRegisterTask({
     }
 
     setTodoList(prev => {
-      const updated: TodoModel[] = [...prev, { check: false, text: value }];
-      localStorage.setItem(storageKeys.TODO_LIST, JSON.stringify(updated));
-      return updated;
+      if (prev) {
+        const updated: TodoModel[] = [...prev, { check: false, text: value }];
+        localStorage.setItem(storageKeys.TODO_LIST, JSON.stringify(updated));
+        return updated;
+      }
     });
     onClose();
   };

@@ -19,11 +19,13 @@ export function Checkbox({ text, checked, setTodoList }: CheckboxProps) {
 
   const handleConfirmDelete = useCallback(() => {
     setTodoList(prev => {
-      const updated: TodoModel[] = prev.filter(item => item.text !== text);
+      if (prev) {
+        const updated: TodoModel[] = prev.filter(item => item.text !== text);
 
-      localStorage.setItem(storageKeys.TODO_LIST, JSON.stringify(updated));
+        localStorage.setItem(storageKeys.TODO_LIST, JSON.stringify(updated));
 
-      return updated;
+        return updated;
+      }
     });
   }, [setTodoList, text]);
 
@@ -31,14 +33,16 @@ export function Checkbox({ text, checked, setTodoList }: CheckboxProps) {
     const { value, checked } = event.target;
 
     setTodoList(prev => {
-      const updated: TodoModel[] = prev.map(item => ({
-        ...item,
-        check: item.text === value ? checked : item.check,
-      }));
+      if (prev) {
+        const updated: TodoModel[] = prev.map(item => ({
+          ...item,
+          check: item.text === value ? checked : item.check,
+        }));
 
-      localStorage.setItem(storageKeys.TODO_LIST, JSON.stringify(updated));
+        localStorage.setItem(storageKeys.TODO_LIST, JSON.stringify(updated));
 
-      return updated;
+        return updated;
+      }
     });
   };
 
