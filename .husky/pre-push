@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-#husky-config": "chmod ug+x .husky/*,
 . "$(dirname -- "$0")/_/husky.sh"
 
 npx --no-install &&
