@@ -54,6 +54,11 @@
   color: var(--BLACK);
 }
 
+.label_check {
+  text-decoration: line-through;
+  color: var(--GRAY_54);
+}
+
 .button {
   background: transparent;
   border: none;

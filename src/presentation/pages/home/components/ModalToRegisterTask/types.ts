@@ -1,6 +1,10 @@
-import { MouseEventHandler } from 'react';
+import { Dispatch, SetStateAction } from 'react';
+
+import { TodoModel } from '@model/todo-model';
 
 export interface ModalToRegisterProps {
+  todoList: TodoModel[];
   open: boolean;
-  onClose: MouseEventHandler<HTMLButtonElement> | undefined;
+  onClose: () => void;
+  setTodoList: Dispatch<SetStateAction<TodoModel[]>>;
 }

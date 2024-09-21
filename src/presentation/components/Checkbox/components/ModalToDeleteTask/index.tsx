@@ -4,7 +4,7 @@ import { Modal } from '@components/Modal';
 import styles from './styles.module.scss';
 import { ModalToDeleteProps } from './types';
 
-export function ModalToDeleteTask({ open, onClose }: ModalToDeleteProps) {
+export function ModalToDeleteTask({ open, onClose, onConfirm }: ModalToDeleteProps) {
   return (
     <Modal open={open}>
       <h3 className={styles.title}>Deletar tarefa</h3>
@@ -13,7 +13,7 @@ export function ModalToDeleteTask({ open, onClose }: ModalToDeleteProps) {
         <Button variant="secondary" onClick={onClose}>
           Cancelar
         </Button>
-        <Button variant="danger" onClick={() => {}}>
+        <Button variant="danger" onClick={onConfirm}>
           Deletar
         </Button>
       </div>

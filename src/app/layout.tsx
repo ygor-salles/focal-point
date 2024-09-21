@@ -9,6 +9,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <title>Focal Point</title>
+        <link rel="icon" href="images/logo_shape.ico" />
         <link as="font" rel="preconnect" href="https://fonts.googleapis.com" />
         <link as="font" rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

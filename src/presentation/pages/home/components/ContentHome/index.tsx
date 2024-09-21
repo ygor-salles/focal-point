@@ -28,7 +28,13 @@ export function ContentHome() {
       <Button variant="primary" type="button" onClick={handleToggleModal}>
         Adicionar nova tarefa
       </Button>
-      <ModalToRegisterTask open={openModal} onClose={handleToggleModal} />
+
+      <ModalToRegisterTask
+        open={openModal}
+        todoList={todoList}
+        onClose={handleToggleModal}
+        setTodoList={setTodoList}
+      />
     </>
   );
 }

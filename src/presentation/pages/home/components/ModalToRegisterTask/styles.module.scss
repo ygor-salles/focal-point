@@ -5,6 +5,12 @@
   color: var(--BLACK);
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .wrapper_buttons {
   width: 100%;
   display: flex;
