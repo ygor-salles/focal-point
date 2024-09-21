@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+#husky-config": "chmod ug+x .husky/*,
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx --no-install &&
+
+npm run lint &&
+
+echo "\033[1;33m  --> Iniciando checagem de tipos..." &&
+
+npx tsc --noEmit --skipLibCheck &&
+
+echo "\033[1;33m  --> checagem de tipos finalizada!"
