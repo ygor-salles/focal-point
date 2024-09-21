@@ -4,6 +4,7 @@ import { ChangeEvent, useCallback, useState } from 'react';
 import { TodoModel } from '@model/todo-model';
 
 import { IMAGES } from '@assets/index';
+import { storageKeys } from '@constants/storageKeys';
 
 import { ModalToDeleteTask } from './components/ModalToDeleteTask';
 import styles from './styles.module.scss';
@@ -20,11 +21,13 @@ export function Checkbox({ text, checked, setTodoList }: CheckboxProps) {
     setTodoList(prev => {
       const updated: TodoModel[] = prev.filter(item => item.text !== text);
 
+      localStorage.setItem(storageKeys.TODO_LIST, JSON.stringify(updated));
+
       return updated;
     });
   }, [setTodoList, text]);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChangeCheckbox = (event: ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
 
     setTodoList(prev => {
@@ -32,6 +35,8 @@ export function Checkbox({ text, checked, setTodoList }: CheckboxProps) {
         ...item,
         check: item.text === value ? checked : item.check,
       }));
+
+      localStorage.setItem(storageKeys.TODO_LIST, JSON.stringify(updated));
 
       return updated;
     });
@@ -47,7 +52,7 @@ export function Checkbox({ text, checked, setTodoList }: CheckboxProps) {
           type="checkbox"
           name={text}
           value={text}
-          onChange={handleChange}
+          onChange={handleChangeCheckbox}
           defaultChecked={checked}
         />
         <label className={styleLabel}>{text}</label>

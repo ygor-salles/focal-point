@@ -1,20 +1,24 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { TodoModel } from '@model/todo-model';
 
 import { Button } from '@components/Button';
+import { getTodoListLocalStorage } from '@utils/getTodoListLocalStorage';
 
 import { ModalToRegisterTask } from '../ModalToRegisterTask';
 import { TaskCard } from '../TaskCard';
-import { defaultValues } from './constants/defaultValue';
 
 export function ContentHome() {
-  const [todoList, setTodoList] = useState<TodoModel[]>(defaultValues);
+  const [todoList, setTodoList] = useState<TodoModel[]>([]);
   const [openModal, setOpenModal] = useState(false);
 
   const handleToggleModal = useCallback(() => setOpenModal(prev => !prev), []);
+
+  useEffect(() => {
+    setTodoList(getTodoListLocalStorage());
+  }, []);
 
   return (
     <>

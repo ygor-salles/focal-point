@@ -1,8 +1,11 @@
 import { FormEvent, useRef } from 'react';
 
+import { TodoModel } from '@model/todo-model';
+
 import { Button } from '@components/Button';
 import { Modal } from '@components/Modal';
 import { TextInput } from '@components/TextInput';
+import { storageKeys } from '@constants/storageKeys';
 
 import styles from './styles.module.scss';
 import { ModalToRegisterProps } from './types';
@@ -31,7 +34,11 @@ export function ModalToRegisterTask({
       return;
     }
 
-    setTodoList(prev => [...prev, { check: false, text: value }]);
+    setTodoList(prev => {
+      const updated: TodoModel[] = [...prev, { check: false, text: value }];
+      localStorage.setItem(storageKeys.TODO_LIST, JSON.stringify(updated));
+      return updated;
+    });
     onClose();
   };
 
